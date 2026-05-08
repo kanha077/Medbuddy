@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSwitchUser"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Switch User"
+                        android:textSize="12sp"
+                        android:textColor="#007AFF"
+                        android:minHeight="40dp"
+                        android:padding="0dp"
+                        app:rippleColor="#22007AFF"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="medbuddy"
+                        android:textSize="32sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="#007AFF"/>
+
+                    <TextView
+                        android:id="@+id/tvGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello,"
+                        android:textColor="#64748B"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_logo"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="2dp"/>
+            </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E2E8F0">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <CalendarView
+                        android:id="@+id/calendarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/CalendarTheme"/>
+
+                    <TextView
+                        android:id="@+id/tvSelectedDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today"
+                        android:paddingLeft="12dp"
+                        android:paddingBottom="12dp"
+                        android:textStyle="bold"
+                        android:textColor="#007AFF"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardNextDose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E2E8F0">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UPCOMING DOSE"
+                        android:textColor="#007AFF"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/tvNextTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08:00 AM"
+                        android:textSize="32sp"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="#1E293B"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/tvNextName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Medicine Name"
+                        android:textSize="18sp"
+                        android:textColor="#64748B"
+                        android:layout_marginTop="2dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMarkTaken"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Confirm Taken"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#007AFF"
+                        app:icon="@drawable/ic_check"
+                        app:iconGravity="textStart"
+                        app:cornerRadius="16dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdd"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:text="+ Add Medicine"
+                app:cornerRadius="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upcoming Doses"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#1E293B"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No medicines scheduled"
+                android:textAlignment="center"
+                android:padding="20dp"
+                android:visibility="gone"
+                android:textColor="#94A3B8"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        app:itemIconTint="#007AFF"
+        app:itemTextColor="#1E293B"
+        app:elevation="24dp"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
